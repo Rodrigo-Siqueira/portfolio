@@ -19,139 +19,8 @@
     <!-- Devicon (ícones das tecnologias) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Links do menu não ficam escondidos sob a navbar fixa */
-        section {
-            scroll-margin-top: 56px;
-        }
-
-        /* ---------- Carousel ---------- */
-        .carousel-item {
-            height: 85vh;
-            min-height: 420px;
-        }
-
-        .carousel-item img {
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-caption {
-            top: 50%;
-            bottom: auto;
-            transform: translateY(-50%);
-            left: 8%;
-            right: auto;
-            max-width: 520px;
-            text-align: left;
-        }
-
-        .carousel-caption h2,
-        .carousel-caption p {
-            text-shadow: 0 2px 12px rgba(0, 0, 0, .65);
-        }
-
-        @media (max-width: 767.98px) {
-            .carousel-item img {
-                object-position: 75% center;
-                filter: brightness(.55);
-            }
-
-            .carousel-caption {
-                left: 10%;
-                right: 10%;
-                max-width: none;
-            }
-        }
-
-        /* ---------- Faixa de números ---------- */
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        /* ---------- Perfil ---------- */
-        .profile-img {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .icon-circle {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-        }
-
-        /* ---------- Trajetória (linha do tempo) ---------- */
-        .timeline {
-            position: relative;
-            margin: 0 auto;
-            max-width: 760px;
-            padding-left: 2rem;
-            border-left: 3px solid var(--bs-primary-border-subtle);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 2rem;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: calc(-2rem - 9px);
-            top: .35rem;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: var(--bs-primary);
-            border: 3px solid var(--bs-body-bg);
-            box-shadow: 0 0 0 2px var(--bs-primary);
-        }
-
-        .timeline-item.next::before {
-            background: var(--bs-body-bg);
-        }
-
-        /* ---------- Projetos ---------- */
-        .project-img {
-            height: 210px;
-            object-fit: cover;
-        }
-
-        .card {
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-
-        .card.hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .12) !important;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            .card {
-                transition: none;
-            }
-        }
-    </style>
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg-light">
@@ -171,6 +40,7 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#perfil">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#trajetoria">Trajetória</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                 </ul>
@@ -205,7 +75,7 @@
                 <div class="carousel-caption">
                     <h2 class="fw-bold">Do HTML ao Laravel</h2>
                     <p class="fs-5">Aprendendo em etapas: HTML, CSS, PHP, testes automatizados, Docker e Laravel.</p>
-                    <a href="#perfil" class="btn btn-outline-light btn-lg">Conhecer meu perfil</a>
+                    <a href="#trajetoria" class="btn btn-outline-light btn-lg">Ver minha trajetória</a>
                 </div>
             </div>
 
@@ -228,6 +98,30 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Próximo</span>
         </button>
+    </div>
+
+    <!-- ========== FAIXA DE DESTAQUES ========== -->
+    <div class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row text-center g-3">
+                <div class="col-6 col-md-3">
+                    <div class="stat-number text-info">3</div>
+                    <small class="text-secondary">projetos no portfólio</small>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number text-info">59</div>
+                    <small class="text-secondary">testes automatizados</small>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number text-info">Nível máx.</div>
+                    <small class="text-secondary">análise estática (PHPStan)</small>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number text-info">PSR-4</div>
+                    <small class="text-secondary">padrão de organização</small>
+                </div>
+            </div>
+        </div>
     </div>
 
     <main id="conteudo">
@@ -288,6 +182,46 @@
                                         <h6 class="fw-bold mb-2">Objetivo</h6>
                                         <p class="text-muted mb-0">Criar sistemas organizados, testados e fáceis de
                                             manter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Como eu trabalho -->
+                        <div class="mt-5">
+                            <h5 class="fw-semibold mb-3">Como eu trabalho</h5>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="d-flex gap-3">
+                                        <span class="icon-circle bg-primary-subtle text-primary"
+                                            aria-hidden="true">✓</span>
+                                        <div>
+                                            <div class="fw-semibold">Qualidade desde o início</div>
+                                            <small class="text-muted">Tipagem estrita, testes automatizados, análise
+                                                estática e padrão de código.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex gap-3">
+                                        <span class="icon-circle bg-success-subtle text-success"
+                                            aria-hidden="true">≡</span>
+                                        <div>
+                                            <div class="fw-semibold">Planejar antes de codar</div>
+                                            <small class="text-muted">Entender o problema, as regras de negócio e a
+                                                organização dos dados antes de escrever código.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex gap-3">
+                                        <span class="icon-circle bg-warning-subtle text-warning-emphasis"
+                                            aria-hidden="true">▤</span>
+                                        <div>
+                                            <div class="fw-semibold">Evolução por etapas</div>
+                                            <small class="text-muted">Cada projeto cresce em marcos: primeiro a base,
+                                                depois testes, Docker, banco de dados e framework.</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -354,9 +288,53 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <p class="mt-4 mb-2 fw-semibold small text-uppercase text-muted">Em estudo</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill text-bg-light border px-3 py-2"><i
+                                        class="devicon-docker-plain colored me-1"></i> Docker</span>
+                                <span class="badge rounded-pill text-bg-light border px-3 py-2"><i
+                                        class="devicon-postgresql-plain colored me-1"></i> PostgreSQL</span>
+                                <span class="badge rounded-pill text-bg-light border px-3 py-2"><i
+                                        class="devicon-laravel-original colored me-1"></i> Laravel</span>
+                            </div>
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TRAJETÓRIA ========== -->
+        <section id="trajetoria" class="py-5">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <h2 class="text-primary fw-bold">Trajetória</h2>
+                    <p class="text-muted mb-0">Como fui evoluindo, uma etapa de cada vez.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h5 class="fw-bold mb-1">Fundamentos da web</h5>
+                        <p class="text-muted mb-0">HTML e CSS no curso técnico: páginas com Flexbox, reset de estilos e
+                            este portfólio com Bootstrap.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5 class="fw-bold mb-1">PHP puro, com rigor</h5>
+                        <p class="text-muted mb-0">Projeto treino-academia-php: PHP 8.3 sem framework, 59 testes,
+                            PHPStan no nível máximo, PHP CS Fixer e PSR-4.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5 class="fw-bold mb-1">Um sistema completo</h5>
+                        <p class="text-muted mb-0">Plataforma Normalize Gestão: sistema de agendamentos e gestão
+                            financeira em PHP, com Composer e código dividido em rotas, módulos, templates e banco de
+                            dados.</p>
+                    </div>
+                    <div class="timeline-item next">
+                        <h5 class="fw-bold mb-1">Próximos passos</h5>
+                        <p class="text-muted mb-0">Docker (PHP 8.4), PostgreSQL e Laravel, levando o treino-academia-php
+                            para uma arquitetura mais completa.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -414,9 +392,12 @@
                                     Sistema de agendamentos e gestão financeira em PHP, conduzido por mim do início ao
                                     fim, com o código organizado em pastas separadas por responsabilidade.
                                 </p>
-                                <a href="https://github.com/Rodrigo-Siqueira/plataforma_normalize_gestao"
-                                    target="_blank" rel="noopener" class="btn btn-outline-primary mt-auto">Ver no
-                                    GitHub</a>
+                                <div class="d-flex gap-2 mt-auto">
+                                    <button type="button" class="btn btn-outline-primary flex-fill"
+                                        data-bs-toggle="modal" data-bs-target="#modalNormalize">Ver detalhes</button>
+                                    <a href="https://github.com/Rodrigo-Siqueira/plataforma_normalize_gestao"
+                                        target="_blank" rel="noopener" class="btn btn-dark flex-fill">GitHub</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -437,12 +418,17 @@
                                     Página com três seções organizadas em Flexbox, feita na atividade de Desenvolvimento
                                     Web, com arquivo de reset e folha de estilo separados.
                                 </p>
-                                <a href="https://github.com/Rodrigo-Siqueira/meus-sites-favoritos" target="_blank"
-                                    rel="noopener" class="btn btn-outline-primary mt-auto">Ver no GitHub</a>
+                                <button type="button" class="btn btn-outline-primary mt-auto" data-bs-toggle="modal"
+                                    data-bs-target="#modalPortal">Ver detalhes</button>
                             </div>
                         </div>
                     </div>
 
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="https://github.com/Rodrigo-Siqueira" target="_blank" rel="noopener"
+                        class="btn btn-dark btn-lg">Ver todos os repositórios no GitHub</a>
                 </div>
             </div>
         </section>
@@ -490,6 +476,69 @@
             <small>Desenvolvido com HTML, CSS e Bootstrap</small>
         </div>
     </footer>
+
+    <!-- ========== MODAIS DOS PROJETOS ========== -->
+
+    <div class="modal fade" id="modalNormalize" tabindex="-1" aria-labelledby="tituloNormalize" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloNormalize">Plataforma Normalize: agendamentos e gestão financeira
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Sistema de agendamentos e gestão financeira em PHP, com dependências gerenciadas pelo Composer.
+                        Projeto educacional desenvolvido principalmente por mim, sem equipe de desenvolvimento. A
+                        inteligência artificial é usada só como apoio, e as decisões do projeto são minhas.
+                    </p>
+                    <h6 class="fw-bold mt-4">Organização do código</h6>
+                    <p class="mb-2">O repositório separa as responsabilidades em pastas:</p>
+                    <ul class="mb-0">
+                        <li><code>Router</code>: rotas do sistema.</li>
+                        <li><code>modules</code> e <code>App</code>: módulos e código da aplicação.</li>
+                        <li><code>Lib/Normalize</code> e <code>src</code>: bibliotecas e código-fonte próprios.</li>
+                        <li><code>Templates</code>, <code>css</code> e <code>js</code>: camada visual.</li>
+                        <li><code>database</code>, <code>config</code> e <code>storage</code>: banco de dados,
+                            configuração e armazenamento.</li>
+                        <li><code>public</code>: arquivos acessíveis pelo navegador.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/Rodrigo-Siqueira/plataforma_normalize_gestao" target="_blank"
+                        rel="noopener" class="btn btn-dark">Ver repositório no GitHub</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPortal" tabindex="-1" aria-labelledby="tituloPortal" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloPortal">Meu Portal de Entretenimento Digital</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Atividade de Desenvolvimento Web (Agenda 13) sobre CSS, no curso técnico em Desenvolvimento de
+                        Sistemas.</p>
+                    <ul class="mb-0">
+                        <li>Página com três seções organizadas em Flexbox.</li>
+                        <li>Arquivos separados: <code>portal.html</code>, <code>estilo.css</code> e
+                            <code>reset.css</code>.</li>
+                        <li>Prática de reset de estilos e de organização de arquivos de um projeto web.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/Rodrigo-Siqueira/meus-sites-favoritos" target="_blank" rel="noopener"
+                        class="btn btn-dark">Ver repositório no GitHub</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
